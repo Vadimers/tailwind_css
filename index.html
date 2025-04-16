@@ -1,132 +1,159 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple site</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/523c65d627.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/style.css">
+    <title>Портфоліо</title>
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="font-roboto">
-
-    <header class="bg-[#EEEFF1] py-8 md:py-20">
-
-        <nav class="container mx-auto px-5 hidden md:block">
-            <ul class="flex gap-5">
-                <li><a href="#" class="text-black hover:text-[#34547A] transition-colors">ГЛАВНАЯ</a></li>
-                <li><a href="#" class="text-black hover:text-[#34547A] transition-colors">ОБ АВТОРЕ</a></li>
-                <li><a href="#" class="text-black hover:text-[#34547A] transition-colors">РАБОТЫ</a></li>
-                <li><a href="#" class="text-black hover:text-[#34547A] transition-colors">ПРОЦЕСС</a></li>
-                <li><a href="#" class="text-black hover:text-[#34547A] transition-colors">КОНТАКТЫ</a></li>
-            </ul>
-        </nav>
-
-        <div class="container mx-auto px-5 md:hidden">
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
-                <i class="fa-solid fa-bars"></i>
-            </label>
-            <div class="nav-mobile">
-                <ul class="flex flex-col gap-5">
-                    <li><a href="#" class="text-black">ГЛАВНАЯ</a></li>
-                    <li><a href="#" class="text-black">ОБ АВТОРЕ</a></li>
-                    <li><a href="#" class="text-black">РАБОТЫ</a></li>
-                    <li><a href="#" class="text-black">ПРОЦЕСС</a></li>
-                    <li><a href="#" class="text-black">КОНТАКТЫ</a></li>
-                </ul>
+<body class="bg-gray-100 font-sans">
+    <!-- Навігація -->
+    <nav class="bg-white shadow-lg fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-gray-800">Портфоліо</span>
+                </div>
+                <div class="flex items-center">
+                    <div class="hidden md:block">
+                        <a href="#home" class="px-3 py-2 text-gray-700 hover:text-blue-500">Головна</a>
+                        <a href="#about" class="px-3 py-2 text-gray-700 hover:text-blue-500">Про мене</a>
+                        <a href="#portfolio" class="px-3 py-2 text-gray-700 hover:text-blue-500">Портфоліо</a>
+                        <a href="#contact" class="px-3 py-2 text-gray-700 hover:text-blue-500">Контакти</a>
+                    </div>
+                    <!-- Мобільне меню -->
+                    <div class="md:hidden">
+                        <button id="mobile-menu-btn" class="text-gray-700 focus:outline-none">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
-    </header>
+        <!-- Мобільне меню (приховане за замовчуванням) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <a href="#home" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Головна</a>
+            <a href="#about" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Про мене</a>
+            <a href="#portfolio" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Портфоліо</a>
+            <a href="#contact" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Контакти</a>
+        </div>
+    </nav>
 
-    <section class="bg-[#EEEFF1] pt-8 md:pt-20 pb-12 md:pb-36">
-        <div class="container mx-auto px-5 flex flex-col items-center text-center">
-            <h1 class="text-3xl md:text-5xl font-medium mb-6 md:mb-16">Дизайн и верстка</h1>
-            <p class="text-[#727272] max-w-[540px] text-sm md:text-base leading-6 mb-6 md:mb-16">
-                Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является
-                стандартной "рыбой" для текстов на латинице с начала XVI века.
-            </p>
-            <button
-                class="bg-[#34547A] text-white px-8 py-3 md:px-10 md:py-4 hover:opacity-60 transition-opacity uppercase text-sm md:text-base">
-                написать мне
-            </button>
+    <!-- Головна секція -->
+    <section id="home"
+        class="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+        <div class="text-center">
+            <h1 class="text-5xl font-bold mb-4 animate__animated animate__fadeIn">Вітаю!</h1>
+            <p class="text-xl mb-6">Я розробник, який створює сучасні веб-додатки</p>
+            <a href="#portfolio"
+                class="bg-white text-blue-500 px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition">Мої
+                проєкти</a>
         </div>
     </section>
 
-    <section class="py-8 md:py-28 px-5">
-        <div class="container mx-auto max-w-[540px] text-center">
-            <h2 class="text-2xl md:text-3xl font-medium mb-4">Обо мне</h2>
-            <p class="text-[#727272] text-sm md:text-base leading-6">
-                Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является
-                стандартной "рыбой" для текстов на латинице с начала XVI века.
-            </p>
-        </div>
-    </section>
-
-    <section class="bg-[#34547A] py-8 md:py-24">
-        <div class="container mx-auto px-5">
-            <ul class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 text-white">
-                <li class="flex items-center gap-4">
-                    <img src="./images/project.png" class="w-10 h-10 md:w-12 md:h-12" alt="icon">
-                    <div>
-                        <p class="text-lg md:text-xl font-medium mb-2">40+</p>
-                        <p class="text-xs md:text-sm">проектов</p>
-                    </div>
-                </li>
-                <li class="flex items-center gap-4">
-                    <img src="./images/project.png" class="w-10 h-10 md:w-12 md:h-12" alt="icon">
-                    <div>
-                        <p class="text-lg md:text-xl font-medium mb-2">40+</p>
-                        <p class="text-xs md:text-sm">проектов</p>
-                    </div>
-                </li>
-                <li class="flex items-center gap-4">
-                    <img src="./images/project.png" class="w-10 h-10 md:w-12 md:h-12" alt="icon">
-                    <div>
-                        <p class="text-lg md:text-xl font-medium mb-2">40+</p>
-                        <p class="text-xs md:text-sm">проектов</p>
-                    </div>
-                </li>
-                <li class="flex items-center gap-4">
-                    <img src="./images/project.png" class="w-10 h-10 md:w-12 md:h-12" alt="icon">
-                    <div>
-                        <p class="text-lg md:text-xl font-medium mb-2">40+</p>
-                        <p class="text-xs md:text-sm">проектов</p>
-                    </div>
-                </li>
-                <li class="flex items-center gap-4">
-                    <img src="./images/project.png" class="w-10 h-10 md:w-12 md:h-12" alt="icon">
-                    <div>
-                        <p class="text-lg md:text-xl font-medium mb-2">40+</p>
-                        <p class="text-xs md:text-sm">проектов</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="bg-[#EEEFF1] py-8 md:py-24">
-        <div class="container mx-auto px-5 text-center">
-            <h2 class="text-2xl md:text-3xl font-medium mb-4">Как я работаю</h2>
-            <p class="text-[#727272] max-w-[540px] mx-auto text-sm md:text-base leading-6 mb-6 md:mb-16">
-                Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является
-                стандартной "рыбой" для текстов на латинице с начала XVI века
-            </p>
-            <div class="aspect-video w-full max-w-[1110px] mx-auto">
-                <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0" class="w-full h-full"></iframe>
+    <!-- Секція "Про мене" -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Про мене</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-6 md:mb-0">
+                    <img src="images/portrait.jpg" alt="Про мене" class="rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-1/2 md:pl-10">
+                    <p class="text-gray-600 mb-4">Я пристрасний веб-розробник із досвідом створення адаптивних та
+                        інтерактивних веб-додатків. Мої навички включають HTML, CSS, JavaScript, а також сучасні
+                        фреймворки.</p>
+                    <p class="text-gray-600">Моя мета — створювати продукти, які не лише виглядають добре, але й
+                        забезпечують чудовий користувацький досвід.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-[#34547A] py-6 md:py-12">
-        <div class="container mx-auto px-5 text-white">
-            <p class="text-lg md:text-xl font-medium mb-2 md:mb-4">Иванов Иван</p>
-            <p class="text-xs">&copy 2018. Все права защищены.</p>
+    <!-- Секція "Портфоліо" -->
+    <section id="portfolio" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Мої проєкти</h2>
+            <!-- Фільтри -->
+            <div class="flex justify-center mb-8">
+                <button class="filter-btn px-4 py-2 mx-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                    data-filter="all">Усі</button>
+                <button class="filter-btn px-4 py-2 mx-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400"
+                    data-filter="web">Веб</button>
+                <button class="filter-btn px-4 py-2 mx-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400"
+                    data-filter="mobile">Мобільні</button>
+            </div>
+            <!-- Проєкти -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="project-grid">
+                <div class="project-card bg-white shadow-lg rounded-lg overflow-hidden web">
+                    <img src="images/web-app.png" alt="Проєкт 1" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold text-gray-800">Веб-додаток</h3>
+                        <p class="text-gray-600">Сучасний веб-додаток із використанням React.</p>
+                    </div>
+                </div>
+                <div class="project-card bg-white shadow-lg rounded-lg overflow-hidden mobile">
+                    <img src="images/mobile-app.png" alt="Проєкт 2" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold text-gray-800">Мобільний додаток</h3>
+                        <p class="text-gray-600">Кросплатформовий додаток на Flutter.</p>
+                    </div>
+                </div>
+                <div class="project-card bg-white shadow-lg rounded-lg overflow-hidden web">
+                    <img src="images/ecommerce.png" alt="Проєкт 3" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold text-gray-800">Інтернет-магазин</h3>
+                        <p class="text-gray-600">E-commerce платформа на Shopify.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секція "Контакти" -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Зв’яжіться зі мною</h2>
+            <form id="contact-form" class="max-w-lg mx-auto">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700">Ім’я</label>
+                    <input type="text" id="name"
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700">Email</label>
+                    <input type="email" id="email"
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        required>
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-gray-700">Повідомлення</label>
+                    <textarea id="message"
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        rows="5" required></textarea>
+                </div>
+                <button type="submit"
+                    class="w-full bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition">Надіслати</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>© 2025 Портфоліо. Усі права захищено.</p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
